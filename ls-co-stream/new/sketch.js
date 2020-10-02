@@ -2,7 +2,7 @@ function setup() {
   $(".draggable").draggable();
   $(".resizable").resizable();
 
-  let parent = "multistream.de.cool";
+  let parent = "sunfiow.github.io";
   
   let mainType = getUrlParam('maintype', 'twitch');
   let overlayType = getUrlParam('overlaytype', 'twitch');
