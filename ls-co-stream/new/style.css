@@ -1,28 +1,27 @@
-#dragover {
+#dragger {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #DC143C33;
-  z-index: -1;
+  z-index: 2;
+}
+
+#overlayVideo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
 }
 
 #overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-#dragger {
   position: fixed;
   width: 31.5%;
   height: 31.5%;
-  top: 68.5%;
   left: 0;
-  right: 0;
   bottom: 0;
+  z-index: 1;
 }
 
-#embed {
+#mainVideo {
   display: block;
   position: fixed;
   width: 100%;
@@ -31,4 +30,16 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 0;
+}
+
+#border {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 }
