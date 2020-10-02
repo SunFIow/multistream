@@ -1,0 +1,51 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+  <div id="twitch-overlay"></div>
+  <div id="twitch-embed"></div>
+
+  <script type="text/javascript">
+    var mainChannel = getUrlParam('main','riotgames');
+    var overlayChannel = getUrlParam('overlay','imls');
+    
+    var twitch_embed = new Twitch.Embed("twitch-embed", {
+      width: "100%",
+      height: "100%",
+      channel: mainChannel,
+      layout: "video",
+    });
+
+    var twitch_overlay = new Twitch.Embed("twitch-overlay", {
+      width: "100%",
+      height: "100%",
+      channel: overlayChannel,
+      layout: "video",
+    });
+
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+        vars[key] = value;
+      });
+      return vars;
+    }
+
+    function getUrlParam(parameter, defaultvalue) {
+      var urlparameter = defaultvalue;
+      if (window.location.href.indexOf(parameter) > -1) {
+        urlparameter = getUrlVars()[parameter];
+      }
+      return urlparameter;
+    }
+  </script>
+</body>
+
+</html>
