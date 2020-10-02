@@ -13,7 +13,8 @@ function setup() {
     snapTolerance: 5
  });
   $("#overlay").resizable({
-    aspectRatio: true
+    aspectRatio: true,
+    handles: "n, e, s, w, ne, se, sw, nw"
   });
 
   let parent = "www.multistream.ml";
