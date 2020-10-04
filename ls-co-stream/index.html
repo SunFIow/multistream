@@ -1,51 +1,26 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8" />
+  <title>Ls Worlds Co Stream</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <script src="sketch.js"></script>
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
-<body>
-  <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+<body onload="setup()">
+  <div id="border"></div>
 
-  <div id="twitch-overlay"></div>
-  <div id="twitch-embed"></div>
+  <iframe id="mainVideo" src="" frameborder="0" allowfullscreen></iframe>
 
-  <script type="text/javascript">
-    var mainChannel = getUrlParam('main','riotgames');
-    var overlayChannel = getUrlParam('overlay','imls');
-    
-    var twitch_embed = new Twitch.Embed("twitch-embed", {
-      width: "100%",
-      height: "100%",
-      channel: mainChannel,
-      layout: "video",
-    });
-
-    var twitch_overlay = new Twitch.Embed("twitch-overlay", {
-      width: "100%",
-      height: "100%",
-      channel: overlayChannel,
-      layout: "video",
-    });
-
-    function getUrlVars() {
-      var vars = {};
-      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-        vars[key] = value;
-      });
-      return vars;
-    }
-
-    function getUrlParam(parameter, defaultvalue) {
-      var urlparameter = defaultvalue;
-      if (window.location.href.indexOf(parameter) > -1) {
-        urlparameter = getUrlVars()[parameter];
-      }
-      return urlparameter;
-    }
-  </script>
+  <div id="overlay" onmouseover="overEvent()" onmouseout="outEvent()">
+    <div id="dragger" ondblclick="dblclickedEvent()"></div>
+    <iframe id="overlayVideo" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
 </body>
 
 </html>

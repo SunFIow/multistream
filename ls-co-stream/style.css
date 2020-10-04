@@ -1,18 +1,29 @@
-#twitch-overlay {
-  position: fixed; 
-  display: block; 
-  width: 31.5%; 
+#dragger {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+#overlayVideo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+#overlay {
+  position: fixed;
+  width: 31.5%;
   height: 31.5%;
-  top: 68.5%;
   left: 0;
-  right: 0;
   bottom: 0;
   z-index: 1;
 }
 
-#twitch-embed {
-  position: fixed;
+#mainVideo {
   display: block;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
@@ -20,4 +31,15 @@
   right: 0;
   bottom: 0;
   z-index: 0;
+}
+
+#border {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 }
