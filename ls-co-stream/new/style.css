@@ -14,8 +14,8 @@
 
 #overlay {
   position: fixed;
-  width: 31.5%;
-  height: 31.5%;
+  /* width: 31.5%; */
+  height: 22.5%; 
   left: 0;
   bottom: 0;
   z-index: 1;
